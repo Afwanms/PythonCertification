@@ -68,17 +68,15 @@ def create_spend_chart(categories):
 
     x_axis = [100,90,80,70,60,50,40,30,20,10,0]
 
-    #Returns the x axis with o's symbolizing the percentages
     chart = "Percentage spent by category"
+
     for i in x_axis:
-        chart += f"\n{str(i).rjust(3)}|"
+        chart += f"\n{str(i).rjust(3)}| "
         for p in percents:
             if p >= i:
-                chart += "o"
+                chart += "o  "
             else:
-                chart += " "
-            chart += "  "  # 2 spaces after each bar/space
-        chart += " "  # 1 extra space at the end
+                chart += "   "
     
     chart += "\n    " + "-" * (len(categories) * 3 + 1)
 
@@ -88,7 +86,7 @@ def create_spend_chart(categories):
     max_len = max(len(category.name) for category in categories)
 
     for i in range(max_len):
-        chart += "     "  # 5 spaces for alignment
+        chart += "     " 
         
         for category in categories:
             if i < len(category.name):
@@ -98,10 +96,6 @@ def create_spend_chart(categories):
         if i < max_len -1:
             chart += "\n"
     return chart
-
-
-
-
 
 food = Category('Food')
 food.deposit(1000, 'initial deposit')
