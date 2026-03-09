@@ -32,3 +32,8 @@ class HashTable:
             if key in self.collection[hash_value]:
                 return self.collection[hash_value][key]
         return None
+    
+print(HashTable().add('golf', 'sport'))
+print(HashTable().add('rose', 'flower'))
+print(HashTable().hash('rose'))
+print(HashTable().lookup('golf'))
