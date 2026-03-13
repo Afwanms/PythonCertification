@@ -1,12 +1,13 @@
 def adjacency_list_to_matrix(dictionary):
     adj_matrix = []
+    size = len(dictionary)
     for key in dictionary:
-        row = [0] * len(dictionary)
+        row = [0] * size
+        
         for neighbor in dictionary[key]:
             row[neighbor] = 1
         adj_matrix.append(row)
     
-    # Print each row in the adjacency matrix
     for row in adj_matrix:
         print(row)
     
